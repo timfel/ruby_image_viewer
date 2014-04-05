@@ -40,8 +40,8 @@ class BMP
       colorplanes = header_read(f, 2).unpack("S<")
       if dibheadersize >= 16
         bpp = header_read(f, 2).unpack("S<")[0]
-        raise "We only support 24bit images" if bpp != 24
-        @depth = 24
+        puts "We only support 24bit images" if bpp != 24
+        @depth = bpp
       end
     end
     return @width, @height
