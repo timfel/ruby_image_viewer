@@ -1,4 +1,4 @@
-class BMPImage
+class BMP
   attr_accessor :width, :height, :depth, :data, :rdata, :header
 
   def initialize(path)

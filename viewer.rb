@@ -1,10 +1,10 @@
 $LOAD_PATH << File.dirname(__FILE__)
 require "ffi"
-require "bmp_image"
+require "bmp"
 require "sdl"
 
 sdl = SDL.new
-bmps = Dir["#{File.expand_path(ARGV[0])}/*.bmp"].sort.map { |file| BMPImage.new(file) }
+bmps = Dir["#{File.expand_path(ARGV[0])}/*.bmp"].sort.map { |file| BMP.new(file) }
 i = 0
 
 sdl.draw_pixels bmps[0].width, bmps[0].height, bmps[0].depth, bmps[0].data
