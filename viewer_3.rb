@@ -8,7 +8,7 @@ require "sdl"
 sdl = SDL.new
 bmps = Dir["#{File.expand_path(ARGV[0])}/*.bmp"].sort.map do |file|
   bmp = BMP.new(file)
-  always { bmp.width.? * bmp.height * (bmp.depth / 8) <= bmp.data.size }
+  always { bmp.width.? * bmp.height * (bmp.depth / 8) >= bmp.data.size }
   always { bmp.depth == 24 || bmp.depth == 16 || bmp.depth = 8 }
   bmp
 end
